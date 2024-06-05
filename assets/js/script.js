@@ -54,3 +54,24 @@ const activeHeader = function () {
 }
 
 window.addEventListener("scroll", activeHeader);
+
+
+
+document.getElementById('resume-btn').addEventListener('click', function() {
+  // The path to your CV file
+  const cvPath = './assets/portfolio.pdf';
+  
+  // Create a temporary anchor element
+  const link = document.createElement('a');
+  link.href = cvPath;
+  link.download = 'Portfolio.pdf'; // The filename to use for the downloaded file
+
+  // Append the anchor to the body
+  document.body.appendChild(link);
+  
+  // Trigger the download by programmatically clicking the anchor
+  link.click();
+  
+  // Remove the anchor from the document
+  document.body.removeChild(link);
+});
